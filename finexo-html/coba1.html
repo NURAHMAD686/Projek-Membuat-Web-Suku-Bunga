@@ -1,0 +1,278 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Interest Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loan Interest Calculator</h1>
+    <form id="loan-form"> 
+        <label for="Saldo Awal">Saldo Awal (Rp):</label>
+        <input type="text" id="Saldo Awal" required><br><br>
+
+        <label for="Pembayaran Perbulan">Pembayaran Perbulan (Rp):</label>
+        <input type="text" id="Pembayaran Perbulan" required><br><br>
+
+        <label for="Bunga">Bunga (decimal):</label>
+        <input type="number" step="0.01" id="Bunga" required><br><br>
+
+        <label for="Lama Cicilan">Lama Cicilan (Bulan):</label>
+        <input type="number" id="Lama Cicilan" required><br><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    <table id="amortization-table">
+        <thead>
+            <tr>
+                <th>Payment No</th>
+                <th>Beginning Balance (Rp)</th>
+                <th>Scheduled Payment (Rp)</th>
+                <th>Interest (Rp)</th>
+                <th>Principal (Rp)</th>
+                <th>Ending Balance (Rp)</th>
+                <th>Cumulative Interest (Rp)</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        document.getElementById('loan-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const Saldo_Awal = parseFloat(document.getElementById('Saldo Awal').value);
+            const Pembayaran_Perbulan = parseFloat(document.getElementById('Pembayaran Perbulan').value);
+            const Bunga = parseFloat(document.getElementById('Bunga').value) / 100;
+            const Lama_Pembayaran = parseInt(document.getElementById('Lama Cicilan').value);
+    
+            let beginningBalance = Saldo_Awal;
+            let cumulativeInterest = 0;
+    
+            const tableBody = document.getElementById('amortization-table').querySelector('tbody');
+            tableBody.innerHTML = '';
+    
+            for (let paymentNo = 1; paymentNo <= Lama_Pembayaran; paymentNo++) {
+                // Hitung bunga, pokok, dan ending balance
+                const interest = beginningBalance * Bunga;
+                let principal = Pembayaran_Perbulan - interest;
+    
+                // Jika pembayaran lebih besar dari saldo
+                if (beginningBalance < principal) {
+                    principal = beginningBalance;
+                }
+    
+                const endingBalance = beginningBalance - Pembayaran_Perbulan;
+                cumulativeInterest += interest;
+    
+                // Format nilai menjadi Rupiah
+                const formatCurrency = (num) =>
+                    new Intl.NumberFormat('id-ID', {
+                        style: 'currency',
+                        currency: 'IDR',
+                    }).format(num);
+    
+                // Buat baris baru untuk tabel
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${paymentNo}</td>
+                    <td>${formatCurrency(beginningBalance)}</td>
+                    <td>${formatCurrency(Pembayaran_Perbulan)}</td>
+                    <td>${formatCurrency(interest)}</td>
+                    <td>${formatCurrency(principal)}</td>
+                    <td>${formatCurrency(endingBalance)}</td>
+                    <td>${formatCurrency(cumulativeInterest)}</td>
+                `;
+                tableBody.appendChild(row);
+    
+                // Perbarui saldo awal untuk iterasi berikutnya
+                beginningBalance = endingBalance;
+                if (beginningBalance <= 0) break; // Berhenti jika saldo habis
+            }
+        });
+    </script> -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Loan Interest Calculator</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            .result {
+                margin-top: 20px;
+            }
+            .result table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .result th, .result td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: center;
+            }
+            .result th {
+                background-color: #f4f4f4;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Loan Interest Calculator</h1>
+        <form id="loan-form">
+            <label for="Saldo Awal">Saldo Awal (Rp):</label>
+            <input type="text" id="Saldo Awal" required><br><br>
+    
+            <label for="Pembayaran Perbulan">Pembayaran Perbulan (Rp):</label>
+            <input type="text" id="Pembayaran Perbulan" required><br><br>
+    
+            <label for="Bunga">Bunga (decimal):</label>
+            <input type="number" step="0.01" id="Bunga" required><br><br>
+    
+            <label for="Lama Cicilan">Lama Cicilan (Bulan):</label>
+            <input type="number" id="Lama Cicilan" required><br><br>
+    
+            <label for="selectedMonth">Pilih Bulan untuk Melihat Hasil:</label>
+            <select id="selectedMonth">
+                <option value="all">Semua Bulan</option>
+            </select><br><br>
+    
+            <label for="viewFullTable">Tampilkan Tabel Lengkap:</label>
+            <input type="checkbox" id="viewFullTable"><br><br>
+    
+            <button type="submit">Calculate</button>
+        </form>
+    
+        <div class="result">
+            <h2>Hasil Perhitungan</h2>
+            <div id="selectedMonthResult"></div>
+            <div id="fullTableResult"></div>
+        </div>
+    
+        <script>
+            document.getElementById('loan-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+    
+                const Saldo_Awal = parseFloat(document.getElementById('Saldo Awal').value);
+                const Pembayaran_Perbulan = parseFloat(document.getElementById('Pembayaran Perbulan').value);
+                const Bunga = parseFloat(document.getElementById('Bunga').value) / 100;
+                const Lama_Pembayaran = parseInt(document.getElementById('Lama Cicilan').value);
+    
+                let beginningBalance = Saldo_Awal;
+                let cumulativeInterest = 0;
+    
+                const selectedMonth = document.getElementById('selectedMonth').value;
+                const viewFullTable = document.getElementById('viewFullTable').checked;
+    
+                // Update dropdown options for selecting months
+                const monthDropdown = document.getElementById('selectedMonth');
+                monthDropdown.innerHTML = '<option value="all">Semua Bulan</option>';
+                for (let i = 1; i <= Lama_Pembayaran; i++) {
+                    const option = document.createElement('option');
+                    option.value = i;
+                    option.textContent = `Bulan ${i}`;
+                    monthDropdown.appendChild(option);
+                }
+    
+                const formatCurrency = (num) =>
+                    new Intl.NumberFormat('id-ID', {
+                        style: 'currency',
+                        currency: 'IDR',
+                    }).format(num);
+    
+                const displayResults = () => {
+                    let fullTableHtml = `<table><thead>
+                        <tr>
+                            <th>Payment No</th>
+                            <th>Beginning Balance (Rp)</th>
+                            <th>Scheduled Payment (Rp)</th>
+                            <th>Interest (Rp)</th>
+                            <th>Principal (Rp)</th>
+                            <th>Ending Balance (Rp)</th>
+                            <th>Cumulative Interest (Rp)</th>
+                        </tr>
+                    </thead><tbody>`;
+    
+                    let selectedMonthResultHtml = "";
+    
+                    for (let paymentNo = 1; paymentNo <= Lama_Pembayaran; paymentNo++) {
+                        // Hitung bunga, pokok, dan ending balance
+                        const interest = beginningBalance * Bunga;
+                        let principal = Pembayaran_Perbulan - interest;
+    
+                        if (beginningBalance < principal) {
+                            principal = beginningBalance;
+                        }
+    
+                        const endingBalance = beginningBalance - Pembayaran_Perbulan;
+                        cumulativeInterest += interest;
+    
+                        // Tampilkan hasil bulan tertentu
+                        if (selectedMonth === "all" || selectedMonth == paymentNo) {
+                            selectedMonthResultHtml += `
+                                <div>
+                                    <h3>Bulan ${paymentNo}</h3>
+                                    <p>Saldo Awal: ${formatCurrency(beginningBalance)}</p>
+                                    <p>Pembayaran: ${formatCurrency(Pembayaran_Perbulan)}</p>
+                                    <p>Bunga: ${formatCurrency(interest)}</p>
+                                    <p>Pokok: ${formatCurrency(principal)}</p>
+                                    <p>Saldo Akhir: ${formatCurrency(endingBalance)}</p>
+                                    <p>Bunga Kumulatif: ${formatCurrency(cumulativeInterest)}</p>
+                                </div><br>`;
+                        }
+    
+                        if (viewFullTable) {
+                            fullTableHtml += `
+                                <tr>
+                                    <td>${paymentNo}</td>
+                                    <td>${formatCurrency(beginningBalance)}</td>
+                                    <td>${formatCurrency(Pembayaran_Perbulan)}</td>
+                                    <td>${formatCurrency(interest)}</td>
+                                    <td>${formatCurrency(principal)}</td>
+                                    <td>${formatCurrency(endingBalance)}</td>
+                                    <td>${formatCurrency(cumulativeInterest)}</td>
+                                </tr>`;
+                        }
+    
+                        beginningBalance = endingBalance;
+                        if (beginningBalance <= 0) break; // Berhenti jika saldo habis
+                    }
+    
+                    if (viewFullTable) {
+                        fullTableHtml += '</tbody></table>';
+                        document.getElementById('fullTableResult').innerHTML = fullTableHtml;
+                    } else {
+                        document.getElementById('fullTableResult').innerHTML = '';
+                    }
+    
+                    document.getElementById('selectedMonthResult').innerHTML = selectedMonthResultHtml;
+                };
+    
+                displayResults();
+            });
+        </script>
+    </body>
+    </html>
+    

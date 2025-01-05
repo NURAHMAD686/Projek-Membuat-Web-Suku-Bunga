@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/favicon.png" type="">
+
+  <title> InterestChill </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="images/hero-bg.png" alt="">
+      </div>
+    </div>
+
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="beranda.html">
+            <span>
+              InterestChill
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item ">
+                <a class="nav-link" href="beranda.html">Beranda </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Tentang</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="service.html">Layanan</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="kalkulator.html">Kalkulator<span class="sr-only">(current)</span> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="team.html">Tim</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="masuk.html"> <i class="fa fa-user" aria-hidden="true"></i>Masuk</a>
+              </li>
+              <form class="form-inline">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+  <!-- end header section -->
+  
+  <!-- kalkulator section -->
+  <section class="kelas_kalkulator layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                <span>kalkulator</span>
+            </h2>
+        </div>
+        <body>
+          <h3 style="font-family: sans-serif;">
+            Petunjuk Pengisian Kalkulator
+          </h3>
+          <p style="text-align: justify; font-family: sans-serif;">
+            <ol>
+              <li>Total Pembayaran (Rp) <br>
+                Masukkan jumlah harga total barang yang ingin/telah  Anda beli sesuai dengan nilai yang tertera atau telah disepakati sebelumnya. Misalnya, jika harga total barang adalah Rp.22.999.000 maka tuliskan 22999000 pada kolom.</li>
+              <li>DP Uang Muka (Rp) <br>
+                Masukkan jumlah uang muka (DP) yang Anda bayarkan di awal pembelian. Uang muka ini akan mengurangi total jumlah pinjaman atau cicilan yang harus dibayarkan. Misalnya, jika Anda membayar DP sebesar Rp.13.000.000 maka tuliskan 13000000 pada kolom. </li>
+              <li>Pembayaran Per-Bulan (Rp) <br>
+                Masukkan nominal cicilan yang wajib dibayarkan setiap bulan sesuai dengan ketentuan dari pihak penyedia barang. Misalnya, per-bulan Anda harus membayarkan Rp.837.723,69 maka tuliskan 837723.69 pada kolom.</li>
+              <li>Bunga (Decimal) <br>
+                Masukkan tingkat bunga yang berlaku dalam bentuk desimal. Misalnya, jika tingkat bunga tahunan adalah 1.88% maka tuliskan 1.88 di kolom ini.</li>
+              <li> Lama Cicilan (Bulan) <br>
+                Masukkan durasi cicilan yang Anda inginkan dalam satuan bulan. Misalnya, jika durasi cicilan adalah 12 bulan (1 tahun),  tuliskan 12 di kolom ini.</li>
+              <li> Pilih Bulan untuk Melihat Hasil <br>
+                Anda dapat memilih opsi untuk menampilkan rincian pembayaran cicilan per-bulan atau menampilkan keseluruhan periode cicilan. Jika Anda ingin melihat untuk semua bulan, maka akan ditampilkan rincian pembayaran untuk setiap bulan dalam durasi cicilan yang dipilih. Dan jika Anda ingin melihat untuk bulan tertentu saja, maka nanti akan ditampilkan rincian pembayaran hanya pada bulan tertentu sesuai yang Anda pilih.</li>
+            </ol>
+          </p>
+
+            <form id="loan-form">
+                <label for="Total Pembayaran">Total Pembayaran (Rp):</label>
+                <input type="text" id="Total Pembayaran" placeholder="Misal: 22999000" required><br><br>
+
+                <label for="Dp">Dp (Rp):</label>
+                <input type="text" id="Dp" placeholder="Misal: 13000000"required><br><br>
+
+                <label for="Pembayaran Perbulan">Pembayaran Perbulan (Rp):</label>
+                <input type="text" id="Pembayaran Perbulan" placeholder="Misal: 837723.69" required><br><br>
+
+                <label for="Bunga">Bunga (decimal):</label>
+                <input type="number" step="0.01" id="Bunga" placeholder="Misal: 1.88"required><br><br>
+
+                <label for="Lama Cicilan">Lama Cicilan (Bulan):</label>
+                <input type="number" id="Lama Cicilan" placeholder="Misal: 12" required><br><br>
+
+                <label for="selectedMonth">Pilih Bulan untuk Melihat Hasil:</label>
+                <select id="selectedMonth">
+                    <option value="all">Semua Bulan</option>
+                </select><br><br>
+
+                <label for="viewFullTable">Tampilkan Tabel Lengkap:</label>
+                <input type="checkbox" id="viewFullTable"><br><br>
+
+                <button type="submit">Calculate</button>
+            </form>
+
+            <div class="result">
+                <h2>Hasil Perhitungan</h2>
+                <div id="saldo-awal-info"></div>
+                <div id="selectedMonthResult"></div>
+                <div id="fullTableResult"></div>
+            </div>
+
+            <script>
+                document.getElementById('loan-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    const Total_pembayaran = parseFloat(document.getElementById('Total Pembayaran').value);
+                    const Dp = parseFloat(document.getElementById('Dp').value);
+                    const Pembayaran_Perbulan = parseFloat(document.getElementById('Pembayaran Perbulan').value);
+                    const Bunga = parseFloat(document.getElementById('Bunga').value) / 100;
+                    const Lama_Pembayaran = parseInt(document.getElementById('Lama Cicilan').value);
+
+                    let Saldo_Awal = Total_pembayaran - Dp
+                    let beginningBalance = Saldo_Awal;
+                    let cumulativeInterest = 0;
+
+                    const selectedMonth = document.getElementById('selectedMonth').value;
+                    const viewFullTable = document.getElementById('viewFullTable').checked;
+
+                    // Update dropdown options for selecting months
+                    const monthDropdown = document.getElementById('selectedMonth');
+                    monthDropdown.innerHTML = '<option value="all">Semua Bulan</option>';
+                    for (let i = 1; i <= Lama_Pembayaran; i++) {
+                        const option = document.createElement('option');
+                        option.value = i;
+                        option.textContent = `Bulan ${i}`;
+                        monthDropdown.appendChild(option);
+                    }
+
+                    const formatCurrency = (num) =>
+                        new Intl.NumberFormat('id-ID', {
+                            style: 'currency',
+                            currency: 'IDR',
+                        }).format(num);
+
+                      // Tampilkan saldo awal di luar tabel
+                    const saldoAwalInfo = document.getElementById("saldo-awal-info");
+                    if (Dp == 0) {
+                        saldoAwalInfo.innerHTML = `
+                            <p>Total pembayaran yang harus Anda bayarkan/lunaskan adalah <strong>${formatCurrency(Saldo_Awal)}</strong>.</p>
+                        `;
+                    } else {
+                        saldoAwalInfo.innerHTML = `
+                            <p>Total Sisa Pembayaran Yang Harus Anda Bayarkan/lunaskan Setelah Total Pembayaran Dikurang DP Adalah Sebesar <strong>${formatCurrency(Saldo_Awal)}</strong>.</p>
+                        `;
+                    }
+
+                    const displayResults = () => {
+                        let fullTableHtml = `<table><thead>
+                            <tr>
+                                <th>Payment No</th>
+                                <th>Beginning Balance (Rp)</th>
+                                <th>Scheduled Payment (Rp)</th>
+                                <th>Interest (Rp)</th>
+                                <th>Principal (Rp)</th>
+                                <th>Ending Balance (Rp)</th>
+                                <th>Cumulative Interest (Rp)</th>
+                            </tr>
+                        </thead><tbody>`;
+
+                        let selectedMonthResultHtml = "";
+
+                        for (let paymentNo = 1; paymentNo <= Lama_Pembayaran; paymentNo++) {
+                            // Hitung bunga, pokok, dan ending balance
+                            const interest = beginningBalance * Bunga;
+                            let principal = Pembayaran_Perbulan - interest;
+
+                            if (beginningBalance < principal) {
+                                principal = beginningBalance;
+                            }
+
+                            const endingBalance = beginningBalance - Pembayaran_Perbulan;
+                            cumulativeInterest += interest;
+
+                            // Tampilkan hasil bulan tertentu
+                            if (selectedMonth === "all" || selectedMonth == paymentNo) {
+                                selectedMonthResultHtml += `
+                                    <div>
+                                        <h3>Bulan ${paymentNo}</h3>
+                                        <p>Beginning Balance: ${formatCurrency(beginningBalance)}</p>
+                                        <p>Pembayaran: ${formatCurrency(Pembayaran_Perbulan)}</p>
+                                        <p>Bunga: ${formatCurrency(interest)}</p>
+                                        <p>Pokok: ${formatCurrency(principal)}</p>
+                                        <p>Saldo Akhir: ${formatCurrency(endingBalance)}</p>
+                                        <p>Bunga Kumulatif: ${formatCurrency(cumulativeInterest)}</p>
+                                    </div><br>`;
+                            }
+
+                            if (viewFullTable) {
+                                fullTableHtml += `
+                                    <tr> 
+                                        <td>${paymentNo}</td>
+                                        <td>${formatCurrency(beginningBalance)}</td>
+                                        <td>${formatCurrency(Pembayaran_Perbulan)}</td>
+                                        <td>${formatCurrency(interest)}</td>
+                                        <td>${formatCurrency(principal)}</td>
+                                        <td>${formatCurrency(endingBalance)}</td>
+                                        <td>${formatCurrency(cumulativeInterest)}</td>
+                                    </tr>`;
+                            }
+
+                            beginningBalance = endingBalance;
+                            if (beginningBalance <= 0) break; // Berhenti jika saldo habis
+                        }
+
+                        if (viewFullTable) {
+                            fullTableHtml += '</tbody></table>';
+                            document.getElementById('fullTableResult').innerHTML = fullTableHtml;
+                        } else {
+                            document.getElementById('fullTableResult').innerHTML = '';
+                        }
+
+                        document.getElementById('selectedMonthResult').innerHTML = selectedMonthResultHtml;
+                    };
+
+                    displayResults();
+                });
+            </script>
+        </body>
+  </section>
+  <!-- kalkulator section -->
+
+  <!-- info section -->
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_contact">
+            <h4>
+              Address
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria- hidden="true"></i>
+                <span>
+                  Kota Parepare, Sulawesi Selatan, Indonesia
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Telfon 0811-2222-3333
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  InterestChill@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>
+              Info
+            </h4>
+            <p>
+              necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto info_col">
+          <div class="info_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="info_links">
+              <a class="active" href="beranda.html">
+                Beranda
+              </a>
+              <a class="" href="about.html">
+                Tentang
+              </a>
+              <a class="" href="service.html">
+                Layanan
+              </a>
+              <a class="" href="why.html">
+                Perhitungan
+              </a>
+              <a class="" href="team.html">
+                Tim
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col ">
+          <h4>
+            Subscribe
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <section class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </section>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.png" type="">
+
+    <title> InterestChill </title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: white; /* Putih untuk latar belakang halaman */
+            margin: 0;
+            /* font-family: 'Times New Roman', serif; Font Times New Roman */
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: justify; /* Rata kanan kiri */
+        }
+
+        .header_section {
+            background-color: navy; /* Latar belakang biru navy */
+            padding: 10px 0;
+        }
+
+        .navbar-brand span {
+            color: white; /* Teks di dalam header berwarna putih */
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+        }
+
+        .navbar-toggler {
+            border-color: white;
+        }
+
+        .form-inline .btn {
+            background: white;
+            color: navy;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p, ol, ul, li {
+            margin-bottom: 10px;
+        }
+
+        ol li {
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container">
+                <a class="navbar-brand" href="beranda.html">
+                    <span>InterestChill</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class=""> </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="beranda.html">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Tentang</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="service.html">Layanan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="why.html">Tabel Perhitungan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="team.html">Tim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="masuk.html">
+                                <i class="fa fa-user" aria-hidden="true"></i> Masuk
+                            </a>
+                        </li>
+                        <form class="form-inline">
+                            <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- End Header Section -->
+
+    <!-- Content Section -->
+    <div class="container">
+        <h1 class="mt-4">Penjelasan Projek Kami</h1>
+        <p>
+            Sebelumnya, kami membuat projek kalkulator untuk cicilan hp dengan menggunakan excel. Kami menggunakan data cicilan hp ip 12 pro max 256 yang kami ambil berdasarkan data yang ada pada brosur. Dari data tersebut, jumlah pinjaman sebelum adanya uang muka adalah sebesar  Rp. 22.999.000 dengan uang muka + admin (DP) Rp. 13.000.000 sehingga sisa yang harus dibayarkannya setelah membayar uang muka adalah Rp. 9.999.000 dalam jangka waktu 12 bulan dengan bunga (interest rate) 1,88%.
+            Adapun isi tabel excel kami berdasarkan data di atas, yakni: <br>
+         <ol>
+            <li>Nomor Pembayaran (Payment No): Urutan pembayaran selama masa cicilan.</li>
+            <li>Tanggal Pembayaran (Payment Date): Jadwal pembayaran angsuran bulanan.</li>
+            <li>Saldo Awal (Beginning Balance): Harga HP yang menjadi sisa pokok pinjaman sebelum pembayaran dilakukan, yakni 
+                Rp. 22.999.000 - Rp. 13.000.000 = Rp. 9.999.000.</li>
+            <li>Pembayaran Terjadwal (Scheduled Payment): Proses pembayaran dalam jumlah tertentu yang dilakukan secara berkala sesuai dengan jadwal yang telah ditentukan sebelumnya yaitu Rp. 837.723,69</li>
+            <li>Jumlah Pembayaran (Total Payment):</li>
+            <ul>
+              <li>Bunga (Interest): Besarnya bunga tiap bulan dihitung berdasarkan saldo awal dan tingkat bunga. <br>
+                Menggunakan rumus = beginning balance × interest rate.</li>
+              <li>Pokok (Principal): jumlah uang utama atau pokok yang dipinjam. <br>
+                Menggunakan rumus = scheduled payment – interest.
+             </li>
+            </ul>
+            <li>Saldo Akhir (Ending Balance): Saldo akhir atau jumlah uang yang tersisa setelah transaksi seperti (pembayaran, setoran,
+                bunga, atau biaya). <br> Menggunakan rumus = beginning balance – scheduled payment.</li>
+            <li>Bunga Kumulatif (Cumulative Interest): Total bunga yang telah dibayarkan hingga periode tertentu. <br> 
+                Menggunakan rumus = cumulative interest sebelumnya + interest.</li>
+         </ol>
+         Kesimpulan: <br>
+         Dari tabel perhitungan cicilan HP di atas, dapat kami tarik kesimpulan bahwa total keseluruhan uang yang harus dibayar setelah 12 kali cicilan adalah Rp 10.052.684,28 9 (ini didapat dari hasil perhitungan antara bunga/interest + pokok/principal). Jumlah ini tentu lebih besar dari harga HP sebenarnya, yaitu Rp 9.999.000,00. Kenapa total pembayaran keseluruhannya lebih besar? Karena adanya selisih sebesar Rp 53.684,28 (terdapat di ending balance) terjadi karena adanya tambahan bunga setiap bulan. Bunga ini adalah biaya yang dibebankan oleh penyedia cicilan sebagai kompensasi atas fasilitas pembayaran secara angsuran. Setiap bulan, jumlah cicilan yang harus dibayar adalah Rp 837.723,69. Cicilan ini terbagi menjadi dua bagian, yaitu bunga dan pelunasan harga HP (pokok). Selama 12 bulan, total bunga yang dibayar mencapai Rp 1.216.326,85, yang menyebabkan total pembayaran lebih besar dari harga awal HP. Selisih Rp 53.684,28 ini muncul karena metode perhitungan bunga atau adanya pembulatan dalam cicilan bulanan. Akibatnya, meskipun harga HP hanya Rp 9.999.000,00, total pembayaran menjadi Rp 10.052.684,28 setelah ditambah bunga dan pembulatan.
+      </p>
+    </div>
+    <!-- End Content Section -->
+
+</body>
+</html>
